@@ -320,9 +320,10 @@ if st.button("🚀 SOẠN GIÁO ÁN NGAY"):
                         else:
                             input_data.append(Image.open(f))
                 
-                if noidung_bosung: input_data.append(noidung_bosung)
-                
-                response = model = genai.GenerativeModel('gemini-2.0-flash')
+               chat = model.start_chat()
+
+response = chat.send_message(input_data)
+print(response.text)
                 
                 st.markdown("### 📄 KẾT QUẢ BÀI SOẠN:")
                 st.markdown(f'<div class="lesson-plan-paper">{response.text}</div>', unsafe_allow_html=True)
