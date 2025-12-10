@@ -322,7 +322,7 @@ if st.button("🚀 SOẠN GIÁO ÁN NGAY"):
                 
                 if noidung_bosung: input_data.append(noidung_bosung)
                 
-                response = model.generate_content(input_data)
+                response = model = genai.GenerativeModel('gemini-2.0-flash')
                 
                 st.markdown("### 📄 KẾT QUẢ BÀI SOẠN:")
                 st.markdown(f'<div class="lesson-plan-paper">{response.text}</div>', unsafe_allow_html=True)
